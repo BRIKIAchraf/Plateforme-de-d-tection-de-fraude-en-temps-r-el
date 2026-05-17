@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+.venv/
+env/
+.env/
+
+# Data and Models
+data/
+delta_transactions/
+mlruns/
+*.csv
+*.parquet
+*.json
+!monitoring/grafana_dashboards/*.json
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Airflow / Postgres volumes
+postgres-data/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

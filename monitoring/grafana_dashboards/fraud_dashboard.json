@@ -1,0 +1,40 @@
+{
+  "title": "Fraud Detection Platform",
+  "panels": [
+    {
+      "type": "timeseries",
+      "title": "Scoring Latency (P95)",
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.95, sum(rate(scoring_latency_seconds_bucket[5m])) by (le))",
+          "refId": "A"
+        }
+      ],
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 }
+    },
+    {
+      "type": "stat",
+      "title": "Total Transactions / Sec",
+      "targets": [
+        {
+          "expr": "rate(scoring_requests_total[1m])",
+          "refId": "A"
+        }
+      ],
+      "gridPos": { "h": 8, "w": 6, "x": 12, "y": 0 }
+    },
+    {
+      "type": "stat",
+      "title": "Fraud Detected Total",
+      "targets": [
+        {
+          "expr": "increase(fraud_detected_total[1h])",
+          "refId": "A"
+        }
+      ],
+      "gridPos": { "h": 8, "w": 6, "x": 18, "y": 0 }
+    }
+  ],
+  "schemaVersion": 36,
+  "timezone": "browser"
+}
